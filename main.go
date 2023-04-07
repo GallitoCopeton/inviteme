@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -11,7 +12,13 @@ import (
 func helloHandler(_ context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	// Get the name parameter from the request body
 	name := request.QueryStringParameters["name"]
-	fmt.Println(request)
+	jsonBytes, err := json.MarshalIndent(request, "", "  ")
+	if err != nil {
+		panic(err)
+	}
+
+	// print the JSON string
+	fmt.Println(string(jsonBytes))
 	// Create the response body
 	message := fmt.Sprintf("Hi momma, %s!", name)
 
