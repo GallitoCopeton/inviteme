@@ -26,5 +26,6 @@ func handler(_ context.Context, request events.APIGatewayProxyRequest) (events.A
 
 func main() {
 	// Start the Lambda function handler
+	fmt.Println("wtf")
 	lambda.Start(handler)
 }
