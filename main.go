@@ -13,7 +13,7 @@ func helloHandler(_ context.Context, request events.APIGatewayProxyRequest) (eve
 	name := request.QueryStringParameters["name"]
 	fmt.Println(request)
 	// Create the response body
-	message := fmt.Sprintf("Hello, %s!", name)
+	message := fmt.Sprintf("Hi, %s!", name)
 
 	// Create the API Gateway response
 	response := events.APIGatewayProxyResponse{
