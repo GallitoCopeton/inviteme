@@ -10,10 +10,10 @@ import (
 
 func helloHandler(_ context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	// Get the name parameter from the request body
-	name := request.QueryStringParameters["name"]
+	//name := request.QueryStringParameters["name"]
 
 	// Create the response body
-	message := fmt.Sprintf("Hello, %s!", name)
+	message := fmt.Sprintf("Hello, %s!", request)
 
 	// Create the API Gateway response
 	response := events.APIGatewayProxyResponse{
