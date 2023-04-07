@@ -12,7 +12,7 @@ import (
 func helloHandler(_ context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	// Get the name parameter from the request body
 	name := request.QueryStringParameters["name"]
-	jsonBytes, err := json.MarshalIndent(request, "", "  ")
+	jsonBytes, err := json.Marshal(request)
 	if err != nil {
 		panic(err)
 	}
