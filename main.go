@@ -8,7 +8,7 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
-func handler(_ context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
+func helloHandler(_ context.Context, request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	// Get the name parameter from the request body
 	name := request.QueryStringParameters["name"]
 
@@ -25,7 +25,7 @@ func handler(_ context.Context, request events.APIGatewayProxyRequest) (events.A
 }
 
 func main() {
-	// Start the Lambda function handler
+	// Start the Lambda function helloHandler
 	fmt.Println("wtf")
-	lambda.Start(handler)
+	lambda.Start(helloHandler)
 }
